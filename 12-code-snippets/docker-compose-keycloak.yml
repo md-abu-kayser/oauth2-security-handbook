@@ -1,0 +1,13 @@
+# Educational local Keycloak environment.
+# Pin a tested version for reproducibility in team/CI environments.
+# Never expose this development configuration as production infrastructure.
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    command: start-dev
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: change-me
+    ports:
+      - "8080:8080"
